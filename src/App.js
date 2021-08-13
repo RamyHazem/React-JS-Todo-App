@@ -1,10 +1,10 @@
 import TodoList from "./components/TodoList";
 
-function App() {
+const App = () => {
   return (
-    <div>
+    <div className="grid place-items-center m-5 ">
       <TodoList />
     </div>
   );
-}
+};
 export default App;
