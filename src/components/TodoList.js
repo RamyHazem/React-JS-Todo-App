@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import TodoItem from "./TodoItem";
 
-const TodoList = ({ todos, setTodos }) => {
+const TodoList = () => {
+  const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [todosCompleted, setTodosCompleted] = useState(0);
 
