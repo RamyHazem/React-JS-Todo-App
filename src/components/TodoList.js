@@ -3,12 +3,15 @@ import TodoItem from "./TodoItem";
 
 const TodoList = ({ todos, setTodos }) => {
   const [inputValue, setInputValue] = useState("");
+  const [todosCompleted, setTodosCompleted] = useState(0);
 
   return (
     <>
       <h1 className="text-4xl font-semibold">My Tasks</h1>
       <h5 className="mt-2 items-center font-semibold opacity-50">
-        2 of 7 Tasks Left
+        {` ${todosCompleted > 0 ? todosCompleted : `0`} of ${
+          todos.length
+        } Completed`}
       </h5>
       <input
         value={inputValue}
@@ -27,6 +30,8 @@ const TodoList = ({ todos, setTodos }) => {
       />
       {todos.map((todo, i) => (
         <TodoItem
+          setTodosCompleted={setTodosCompleted}
+          todosCompleted={todosCompleted}
           todo={todo}
           todos={todos}
           setTodos={setTodos}
